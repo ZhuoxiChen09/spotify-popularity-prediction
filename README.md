@@ -1,9 +1,10 @@
 # spotify-popularity-prediction
-Machine learning project comparing KNN regression models to predict song popularity rankings using streaming platform metrics. Features systematic model evaluation, cross-validation, and bias-variance analysis.
 
-## Project Overview
+Machine learning project comparing KNN regression models to predict song popularity rankings using streaming platform metrics, with systematic model evaluation and bias-variance analysis.
 
-This project analyzes the relationship between quantitative music metrics (streams, playlist counts, track scores, etc.) and overall song popularity. Through systematic model comparison, the optimal KNN configuration is identified to predict a song's "All Time Rank" based on its quantitative features.
+## Overview
+
+This project analyzes the relationship between quantitative music metrics (streams, playlist counts, track scores) and overall song popularity. Through systematic model comparison, the optimal KNN configuration is identified to predict a song's ranking based on its quantitative features.
 
 ## Objectives
 
@@ -14,10 +15,12 @@ This project analyzes the relationship between quantitative music metrics (strea
 
 ## Dataset
 
-The project uses the **Most Streamed Spotify Songs 2024** dataset, containing:
-- **4,600 songs** with **29 features**
-- Features include: Spotify streams, playlist counts, YouTube views, TikTok metrics, Track Score, and more
-- Target variable: **All Time Rank** (continuous, regression problem)
+## Dataset
+
+The **Most Streamed Spotify Songs 2024** dataset contains:
+- 4,600 songs with 29 features
+- Features: Spotify streams, playlist counts, YouTube views, TikTok metrics, and track scores
+- Target variable: All Time Rank (regression task)
 
 ## Methodology
 
@@ -44,17 +47,23 @@ The project uses the **Most Streamed Spotify Songs 2024** dataset, containing:
 
 ## Results
 
-### Best Model: Variant 3 (KNN k=5, distance-based weights)
+## Results
 
-- **Test R²:** 0.6536 (explains ~65% of variance)
-- **CV RMSE:** 774.71 (±19.11)
-- **Test RMSE:** 796.07
+### Best Model Performance
+
+Variant 3 (KNN k=5 with distance-based weighting) achieved the best performance:
+- Test R²: 0.6536 (explains 65% of variance)
+- Cross-Validation RMSE: 774.71 (±19.11)
+- Test RMSE: 796.07
 
 ### Key Findings
 
+## Key Findings
+
 - **Optimal k value:** k=5 provides the best balance between flexibility and stability
-- **Distance weighting:** Superior to uniform weighting, allowing closer neighbors to have more influence
+- **Distance weighting:** Outperforms uniform weighting by allowing closer neighbors greater influence
 - **Bias-variance tradeoff:** Moderate k with distance weighting achieves optimal generalization
+- **Model limitations:** R² of 0.65 indicates room for improvement through feature engineering or alternative models
 
 ### Model Comparison
 
@@ -101,26 +110,25 @@ pip install numpy pandas matplotlib seaborn scikit-learn scipy statsmodels
 
 ### Running the Analysis
 
-1. Clone this repository
-2. Ensure the dataset `Most Streamed Spotify Songs 2024.csv` is in the project directory
-3. Open `spotify_popularity_prediction.ipynb` in Jupyter Notebook or JupyterLab
-4. Run all cells to reproduce the analysis
+1. Ensure the dataset is in the project directory
+2. Open `spotify_popularity_prediction.ipynb` in Jupyter Notebook or JupyterLab
+3. Run all cells to reproduce the analysis
 
 ### Expected Output
 
-The notebook will:
-- Load and preprocess the data
-- Train and evaluate four KNN model variants
-- Generate comparison visualizations
-- Display performance metrics and model selection results
+The notebook generates:
+- Model performance comparisons
+- Residual analysis and assumption checking
+- Prediction accuracy visualizations
+- Comparative metrics across all variants
 
 ## Visualizations
 
-The project includes several visualizations:
-- **Training vs Cross-Validation Error Comparison** - Model performance comparison
-- **Residual Analysis** - Assumption checking (residuals vs fitted, Q-Q plots)
-- **Predicted vs Actual** - Model prediction accuracy
-- **Model Metrics Comparison** - AIC, BIC, Adjusted R² comparison
+The project generates several visualizations for analysis:
+- Training vs Cross-Validation Error Comparison
+- Residual Analysis (Q-Q plots, residuals vs fitted values)
+- Predicted vs Actual Values
+- Model Metrics Comparison (AIC, BIC, Adjusted R²)
 
 ## Key Insights
 
@@ -137,18 +145,10 @@ The project includes several visualizations:
 - Feature engineering and selection
 - Hyperparameter tuning with grid search
 - Alternative models (Random Forest, Gradient Boosting, Neural Networks)
-- Feature importance analysis (permutation importance, SHAP values)
+- Feature importance analysis
 - Ensemble methods
 
 ## License
 
 This project is open source and available for educational and research purposes.
-
-## Author
-
-Personal portfolio project demonstrating machine learning model comparison and evaluation techniques.
-
----
-
-**Note:** This project demonstrates systematic model comparison, cross-validation techniques, and proper handling of KNN regression models for a real-world prediction task.
 

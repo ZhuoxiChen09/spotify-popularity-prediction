@@ -56,6 +56,12 @@ Variant 3 (KNN k=5 with distance-based weighting) achieved the best performance:
 - Cross-Validation RMSE: 774.71 (±19.11)
 - Test RMSE: 796.07
 
+### Interpreting RMSE ≈ 775
+
+RMSE is measured in the same units as the target variable, **All Time Rank** (where 1 is most popular and 4600 is least popular). An RMSE of roughly **775** therefore means that, on average, the model’s predictions are off by about **700–800 ranking positions** for a given song.
+
+Given that the rank ranges from 1 to 4600, this corresponds to an error of roughly **15–20% of the full ranking range**. In practice, the model can capture broad popularity tiers (e.g., top vs. middle vs. bottom of the ranking) but is **not precise enough** to distinguish fine‑grained differences between songs with similar popularity.
+
 ### Key Findings
 
 ## Key Findings

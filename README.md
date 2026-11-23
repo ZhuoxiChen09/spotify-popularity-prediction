@@ -32,7 +32,7 @@ Variant 3 had the lowest CV RMSE and AIC/BIC. The target ranges from 1 to 4,600,
 ## Running it
 
 ```bash
-pip install numpy pandas matplotlib seaborn scikit-learn scipy statsmodels
+pip install -r requirements.txt
 ```
 
-Download the Most Streamed Spotify Songs 2024 CSV separately, then edit `CSV_PATH` and `FIG_DIR` in the first code cell to point at local paths before running the notebook.
+Use Python 3.11. Download the Most Streamed Spotify Songs 2024 CSV separately and put it in `data/`. Set `SPOTIFY_DATA_DIR` if the CSV lives elsewhere. The notebook writes figures to `figures/`.
